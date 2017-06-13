@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="780.0" prefWidth="1305.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.travel.car.CarController">
+   <children>
+      <TextField fx:id="startTextID" layoutX="39.0" layoutY="150.0" prefHeight="68.0" prefWidth="471.0" promptText="Enter Location">
+         <font>
+            <Font size="23.0" />
+         </font></TextField>
+      <TextField fx:id="endTextID" layoutX="787.0" layoutY="150.0" prefHeight="68.0" prefWidth="471.0" promptText="Enter Location">
+         <font>
+            <Font size="23.0" />
+         </font></TextField>
+      <Text fx:id="startID" layoutX="189.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Location">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text fx:id="endID" layoutX="953.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Location">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <CheckBox fx:id="kmID" layoutX="544.0" layoutY="233.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="102.0" text="Km">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="milesID" layoutX="636.0" layoutY="241.0" mnemonicParsing="false" text="Miles">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </CheckBox>
+      <Button fx:id="calculateID" layoutX="517.0" layoutY="699.0" mnemonicParsing="false" onAction="#CalculateAction" prefHeight="54.0" prefWidth="244.0" text="Calculate" />
+      <Label fx:id="labelID" layoutX="573.0" layoutY="178.0" prefHeight="40.0" prefWidth="108.0" />
+      
+   </children>
+</AnchorPane>
