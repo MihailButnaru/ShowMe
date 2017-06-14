@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
@@ -32,6 +33,7 @@ public class CarController implements Initializable {
     @FXML private Label litrlesID;
     @FXML private Label costID;
     @FXML private Pane mapID;
+    @FXML private RadioButton KimID;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -57,8 +59,16 @@ public class CarController implements Initializable {
        CarApi carAp = new CarApi();
        String startName = dataAp.getStartAddress();
        String endName = dataAp.getEndAddress();
+       
+       //Getting the distance and split in several strings
        String distance = carAp.displayData(startName,endName);
-       System.out.println(distance);
+       String[] distanceNumber = distance.split(" ");
+       labelID.setText(distanceNumber[0]);
+       
+       //Getting the travelTime
+       String timeTravel = carAp.displayTime(startName, endName);
+       timeID.setText(timeTravel);
+      
     }
 
    

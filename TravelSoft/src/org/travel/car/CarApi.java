@@ -41,7 +41,6 @@ public class CarApi {
      }
      
      public String displayData(String start, String end) throws IOException{
-         
          JSONObject json = readJsonFromUrl("https://maps.googleapis.com/maps/api/directions/json?origin="+ start + "&destination="+end+"4&key=AIzaSyC62daLUcu1lxrLXbc1RjapmU2dDA_AIIY");
          JSONArray jsonarr = json.getJSONArray("routes");
          JSONObject json1 = jsonarr.getJSONObject(0);
@@ -51,4 +50,20 @@ public class CarApi {
          String distance = json3.getString("text");
          return distance;  
      }
+     public String displayTime(String start, String end) throws IOException{
+         JSONObject json = readJsonFromUrl("https://maps.googleapis.com/maps/api/directions/json?origin="+ start + "&destination="+end+"4&key=AIzaSyC62daLUcu1lxrLXbc1RjapmU2dDA_AIIY");
+         JSONArray jsonarr = json.getJSONArray("routes");
+         JSONObject json1 = jsonarr.getJSONObject(0);
+         JSONArray jsonarr1 = json1.getJSONArray("legs");
+         JSONObject json2 = jsonarr1.getJSONObject(0);
+         JSONObject json3 = json2.getJSONObject("duration");
+         String timeTravel = json3.getString("text");
+         return timeTravel;
+     }
+//     public static void main(String[] args) throws IOException{
+//         CarApi api = new CarApi();
+//         String start = "London";
+//         String test = api.displayTime(start, "Chisinau");
+//         System.out.println(test);
+//     }
 }
