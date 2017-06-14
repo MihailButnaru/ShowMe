@@ -1,8 +1,10 @@
 package org.travel.car;
 
+import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -12,9 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 /**
- * FXML Controller class
- *
- * @author MichaelButnaru
+ * @author MIHAIL BUTNARU
  */
 public class CarController implements Initializable {
 
@@ -29,12 +29,27 @@ public class CarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+       
+        
+    } 
+    
 
     @FXML
     private void CalculateAction(ActionEvent event) {
+        
+       DataApi dataAp = new DataApi();
+       
+       //Getting the startLocation and endLocation
+       String startLocation = startTextID.getText();
+       String endLocation = endTextID.getText();
+       
+       //Setting the start and endLocatoin
+       dataAp.setStartAddress(startLocation);
+       dataAp.setEndAddress(endLocation);
+
        
     }
+
+   
     
 }
