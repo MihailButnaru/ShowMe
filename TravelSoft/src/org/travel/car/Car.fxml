@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -28,18 +29,57 @@
             <Font size="26.0" />
          </font>
       </Text>
-      <CheckBox fx:id="kmID" layoutX="544.0" layoutY="245.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="102.0" text="Km">
+      <CheckBox fx:id="kmID" layoutX="561.0" layoutY="222.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="102.0" text="Km">
          <font>
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="milesID" layoutX="636.0" layoutY="241.0" mnemonicParsing="false" text="Miles">
+      <CheckBox fx:id="milesID" layoutX="670.0" layoutY="222.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="102.0" text="Miles">
          <font>
             <Font size="18.0" />
          </font>
       </CheckBox>
       <Button fx:id="calculateID" layoutX="517.0" layoutY="699.0" mnemonicParsing="false" onAction="#CalculateAction" prefHeight="54.0" prefWidth="244.0" text="Calculate" />
-      <Label fx:id="labelID" layoutX="384.0" layoutY="243.0" prefHeight="40.0" prefWidth="108.0" />
+      <Label fx:id="labelID" layoutX="153.0" layoutY="224.0" prefHeight="40.0" prefWidth="108.0" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="17.0" />
+         </font></Label>
+      <Label fx:id="timeID" layoutX="356.0" layoutY="224.0" prefHeight="35.0" prefWidth="108.0">
+         <font>
+            <Font name="Comic Sans MS" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="225.0" prefHeight="35.0" prefWidth="123.0" text="Distance:" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="251.0" layoutY="225.0" prefHeight="35.0" prefWidth="123.0" text="Travel Time:" textAlignment="CENTER">
+         <font>
+            <Font name="System Font Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="820.0" layoutY="225.0" prefHeight="35.0" prefWidth="123.0" text="Litres:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="litrlesID" layoutX="881.0" layoutY="225.0" prefHeight="35.0" prefWidth="108.0">
+         <font>
+            <Font name="Comic Sans MS" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="1010.0" layoutY="225.0" prefHeight="35.0" prefWidth="123.0" text="Travel Cost:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="costID" layoutX="1115.0" layoutY="225.0" prefHeight="35.0" prefWidth="108.0">
+         <font>
+            <Font name="Comic Sans MS" size="17.0" />
+         </font>
+      </Label>
+      <Pane fx:id="mapID" layoutX="39.0" layoutY="272.0" prefHeight="411.0" prefWidth="1227.0" />
       
    </children>
 </AnchorPane>
