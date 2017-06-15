@@ -245,7 +245,7 @@
 <!-- search -->
 <div id="u02search" class="u02search" data-trackas="header">
 <form class="u02searchform" name="searchForm" method="get" action="https://www.oracle.com/search/results">
-    <input type="hidden" name="Nty" value="1" /> 				<input type="hidden" name="Ntk" value="S3" /> 				<input id="txtSearch" class="textcnt autoclear" name="Ntt" value="" /> 				<input type="submit" class="u02searchbttn" value="Submit Search" />
+    <input name="Nty" value="1" type="hidden" /> 				<input name="Ntk" value="S3" type="hidden" /> 				<input id="txtSearch" class="textcnt autoclear" name="Ntt" value="" /> 				<input class="u02searchbttn" value="Submit Search" type="submit" />
 </form>
 </div>
 <div class="u02tools" data-trackas="header">
@@ -265,7 +265,13 @@
     <div class="u02userinw1 u02userloggedout" data-lbl="oracle-account">
     <h5>Oracle Account</h5>
     <p>Manage your account and access personalized content.</p>
-    <a id="u02pfile-regs" data-lbl="signin" class="u02bttn" href="http://www.oracle.com/webapps/redirect/signon?nexturl=">Sign in</a> 								<a data-lbl="createaccount" class="u02acclink" href="https://profile.oracle.com/myprofile/account/create-account.jspx">Create an account</a></div>
+	<a href="http://www.oracle.com/webapps/redirect/signon?nexturl=" id="u02pfile-regs" data-lbl="signin" class="u02bttn">Sign in</a>
+	<ul id="u02usertools">
+		<li><a href="https://profile.oracle.com/myprofile/account/create-account.jspx" data-lbl="createaccount">Create an account</a></li>
+		<li><a data-lbl="help" href="http://www.oracle.com/us/corporate/contact/about-your-account-070507.html">Help</a></li>
+	</ul>
+	</div>
+
     <div class="u02userinw2" data-lbl="cloud-account">
     <h5>Cloud Account</h5>
     <p>Access your cloud dashboard, manage orders, and more.</p>

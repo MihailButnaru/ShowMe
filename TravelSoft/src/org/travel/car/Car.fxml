@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
@@ -30,12 +31,12 @@
             <Font size="26.0" />
          </font>
       </Text>
-      <CheckBox fx:id="kmID" layoutX="561.0" layoutY="222.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="102.0" text="Km">
+      <CheckBox fx:id="kmID" layoutX="480.0" layoutY="222.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="102.0" text="Km">
          <font>
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="milesID" layoutX="670.0" layoutY="222.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="102.0" text="Miles">
+      <CheckBox fx:id="milesID" layoutX="710.0" layoutY="222.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="102.0" text="Miles">
          <font>
             <Font size="18.0" />
          </font>
@@ -80,8 +81,11 @@
             <Font name="Comic Sans MS" size="17.0" />
          </font>
       </Label>
-      <Pane fx:id="mapID" layoutX="39.0" layoutY="272.0" prefHeight="411.0" prefWidth="1227.0" />
-      <RadioButton fx:id="KimID" layoutX="564.0" layoutY="263.0" mnemonicParsing="false" text="Km" />
+      <Pane fx:id="mapID" layoutX="39.0" layoutY="272.0" prefHeight="411.0" prefWidth="1227.0">
+         <children>
+            <RadioButton fx:id="KimID" layoutX="560.0" layoutY="22.0" mnemonicParsing="false" text="Km" />
+         </children></Pane>
+      <ChoiceBox fx:id="engineID" layoutX="549.0" layoutY="230.0" prefWidth="150.0" />
       
    </children>
 </AnchorPane>
