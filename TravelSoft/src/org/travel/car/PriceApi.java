@@ -23,7 +23,8 @@ public class PriceApi {
 
             String petrolPrice = list[0];
             double currentPetrolPrice = Double.parseDouble(petrolPrice);
-            return currentPetrolPrice;
+            double convertPrice1 = currentPetrolPrice / 100;
+            return convertPrice1;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -43,7 +44,8 @@ public class PriceApi {
 
             String dieselPrice = list[3];
             double currentDieselPrice = Double.parseDouble(dieselPrice);
-            return currentDieselPrice;
+            double convertPrice = currentDieselPrice / 100;
+            return convertPrice;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -53,14 +55,14 @@ public class PriceApi {
     }
     
 
-    public static void main(String [] args){
-        
-       PriceApi api = new PriceApi();
-       double m = api.fuelPetrol();
-       double n = api.fuelDiesel();
-       System.out.println(m);
-       System.out.println(n);
-    }
+//    public static void main(String [] args){
+//        
+//       PriceApi api = new PriceApi();
+//       double m = api.fuelPetrol();
+//       double n = api.fuelDiesel();
+//       System.out.println(m);
+//       System.out.println(n);
+//    }
     
     
 }

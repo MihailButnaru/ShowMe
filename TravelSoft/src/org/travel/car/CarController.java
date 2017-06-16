@@ -36,23 +36,25 @@ public class CarController implements Initializable {
     @FXML private TextField endTextID;
     @FXML private Text startID;
     @FXML private Text endID;
-    @FXML private CheckBox kmID;
-    @FXML private CheckBox milesID;
     @FXML private Button calculateID;
     @FXML private Label labelID;
     @FXML private Label timeID;
     @FXML private Label litrlesID;
     @FXML private Label costID;
     @FXML private Pane mapID;
-    @FXML private RadioButton KimID;
-    private ChoiceBox engineID;
-//    ObservableList<Double> choice = FXCollections.observableArrayList(1.0, 1.5, 1.6, 1.7, 1.8, 2.0,2.2, 2.3, 2.5, 2.6, 2.7, 2.8, 3.0, 3.2, 3.3, 3.5, 3.7, 3.8, 3.9, 4.1, 4.2, 4.4, 4.8, 5.0);
     @FXML private TextField mpgID;
+    
+    //Fuel Choice
+    @FXML private ComboBox choiceID;
+    ObservableList<String> choice = FXCollections.observableArrayList("Diesel", "Petrol");
+
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//       engineID.setItems(choice);
-//       engineID.getSelectionModel().select(2.2);
+        //It initilize the diesel first
+       choiceID.setItems(choice);
+       choiceID.getSelectionModel().select("Diesel");
         
     } 
     
@@ -87,7 +89,7 @@ public class CarController implements Initializable {
             String distance = carAp.displayData(startName,endName);
             String[] distanceNumber = distance.split(" ");
             
-            labelID.setText(distanceNumber[0]);
+            labelID.setText(distance);
             
             //Getting the travelTime
             String timeTravel = carAp.displayTime(startName, endName);
@@ -98,6 +100,34 @@ public class CarController implements Initializable {
             int convertingTheLitres = (int) calculateLitres(calc);
             String test1 = String.valueOf(convertingTheLitres);
             litrlesID.setText(test1);
+            String valueFuel = (String) choiceID.getValue();
+            
+            if(valueFuel.equals("Diesel")){
+            //Display the diesel Price
+            String litres = litrlesID.getText();
+            PriceApi fuel = new PriceApi();
+            int fuelChoice = Integer.parseInt(litres);
+            double fuelPrice = (double) fuelChoice * (double)fuel.fuelDiesel();
+            int fuelPrice1 = (int) fuelPrice;
+            String fuelPriceLabel = String.valueOf(fuelPrice1);
+            costID.setText("£ " + fuelPriceLabel);
+            
+            }else if(valueFuel.equals("Petrol")){
+            //Display petrol Price
+            String litres = litrlesID.getText();
+            PriceApi fuel = new PriceApi();
+            int fuelChoice = Integer.parseInt(litres);
+            double fuelPrice = (double) fuelChoice * (double)fuel.fuelPetrol();
+            int fuelPrice1 = (int) fuelPrice;
+            String fuelPriceLabel = String.valueOf(fuelPrice1);
+            costID.setText("£ " + fuelPriceLabel);
+            
+            }else{
+                
+            }
+            
+           
+            
      
        } 
     }
@@ -125,13 +155,9 @@ public class CarController implements Initializable {
             }
             String km2 = km + km1;
             int finalCalculation = Integer.parseInt(km2);
-            double calculated = finalCalculation / litres;
+            double calculated = (finalCalculation * litres)/100;
             
             return calculated;
             
-    }
-
-
-   
-    
+    }   
 }
