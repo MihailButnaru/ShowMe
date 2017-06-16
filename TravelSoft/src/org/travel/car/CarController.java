@@ -93,66 +93,18 @@ public class CarController implements Initializable {
             String timeTravel = carAp.displayTime(startName, endName);
             timeID.setText(timeTravel);
             
+            //Calculates Litres
             String calc = distanceNumber[0];
-            
-            calculateLitres(calc);
-//            //MPG Convert To Litres based on the Kilometres 100km
-//            String convert =  mpgID.getText();
-//            int convertLitres = parseInt(convert);
-//            Converter conv = new Converter();
-//            double litres = conv.convertMPGToLitres(convertLitres);
-//            
-//            //Calculating the km / litres to know litres total
-//            String calc = distanceNumber[0];
-//            String[] calculation1 = calc.split(",");
-//            String km ="";
-//            for(int i = 0; i < calculation1.length; i++){
-//                km = calculation1[i];
-//                break;
-//                
-//            }
-//            String km1 = "";
-//            for(int i = 1; i < calculation1.length; i++){
-//                km1 = calculation1[i];
-//            }
-//            String km2 = km + km1;
-//            int finalCalculation = Integer.parseInt(km2);
-//            double calculated = finalCalculation / litres;
-//            System.out.println(calculated);
-//            System.out.println("Litres " + litres);
-//            System.out.println("KM " + finalCalculation);
-          
-        
-            
-            
-       }
-       
-       
+            int convertingTheLitres = (int) calculateLitres(calc);
+            String test1 = String.valueOf(convertingTheLitres);
+            litrlesID.setText(test1);
      
-     
-        
-
-      
-       
-       
-
-       
-       
-       //Calculate from km to miles
-//       String miles = distanceNumber[0];
-//       int milesCalculation = Integer.parseInt(miles);
-//       System.out.println(milesCalculation);
-//       double mileDouble =  milesCalculation * 0.621371;
-//       System.out.println(mileDouble);
-       
-       
-       
-             
-      
+       } 
     }
     
     public double calculateLitres(String str){
-        //MPG Convert To Litres based on the Kilometres 100km
+        
+            //MPG Convert To Litres based on the Kilometres 100km
             String convert =  mpgID.getText();
             int convertLitres = parseInt(convert);
             Converter conv = new Converter();
@@ -174,11 +126,9 @@ public class CarController implements Initializable {
             String km2 = km + km1;
             int finalCalculation = Integer.parseInt(km2);
             double calculated = finalCalculation / litres;
-            System.out.println(calculated);
-            System.out.println("Litres " + litres);
-            System.out.println("KM " + finalCalculation);
+            
             return calculated;
-        
+            
     }
 
 
