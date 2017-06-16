@@ -7,6 +7,7 @@ import static java.lang.Float.parseFloat;
 import static java.lang.Integer.parseInt;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -92,17 +93,36 @@ public class CarController implements Initializable {
             String timeTravel = carAp.displayTime(startName, endName);
             timeID.setText(timeTravel);
             
-            //MPG Convert To Litres based on the Kilometres 100km
-            String convert =  mpgID.getText();
-            int convertLitres = parseInt(convert);
-            Converter conv = new Converter();
-            double litres = conv.convertMPGToLitres(convertLitres);
-            
-            //Calculating the km / litres to know litres total
             String calc = distanceNumber[0];
-            double calc1 = Double.parseDouble(calc);
-            double answerCalculation = calc1 / litres;
-            System.out.println(answerCalculation);
+            
+            calculateLitres(calc);
+//            //MPG Convert To Litres based on the Kilometres 100km
+//            String convert =  mpgID.getText();
+//            int convertLitres = parseInt(convert);
+//            Converter conv = new Converter();
+//            double litres = conv.convertMPGToLitres(convertLitres);
+//            
+//            //Calculating the km / litres to know litres total
+//            String calc = distanceNumber[0];
+//            String[] calculation1 = calc.split(",");
+//            String km ="";
+//            for(int i = 0; i < calculation1.length; i++){
+//                km = calculation1[i];
+//                break;
+//                
+//            }
+//            String km1 = "";
+//            for(int i = 1; i < calculation1.length; i++){
+//                km1 = calculation1[i];
+//            }
+//            String km2 = km + km1;
+//            int finalCalculation = Integer.parseInt(km2);
+//            double calculated = finalCalculation / litres;
+//            System.out.println(calculated);
+//            System.out.println("Litres " + litres);
+//            System.out.println("KM " + finalCalculation);
+          
+        
             
             
        }
@@ -129,6 +149,36 @@ public class CarController implements Initializable {
        
              
       
+    }
+    
+    public double calculateLitres(String str){
+        //MPG Convert To Litres based on the Kilometres 100km
+            String convert =  mpgID.getText();
+            int convertLitres = parseInt(convert);
+            Converter conv = new Converter();
+            double litres = conv.convertMPGToLitres(convertLitres);
+            
+            //Calculating the km / litres to know litres total
+            String calc = str;
+            String[] calculation1 = calc.split(",");
+            String km ="";
+            for(int i = 0; i < calculation1.length; i++){
+                km = calculation1[i];
+                break;
+                
+            }
+            String km1 = "";
+            for(int i = 1; i < calculation1.length; i++){
+                km1 = calculation1[i];
+            }
+            String km2 = km + km1;
+            int finalCalculation = Integer.parseInt(km2);
+            double calculated = finalCalculation / litres;
+            System.out.println(calculated);
+            System.out.println("Litres " + litres);
+            System.out.println("KM " + finalCalculation);
+            return calculated;
+        
     }
 
 
