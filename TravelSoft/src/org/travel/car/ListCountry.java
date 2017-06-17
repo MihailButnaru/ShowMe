@@ -4,11 +4,11 @@ package org.travel.car;
 import java.util.Locale;
 
 public class ListCountry {
-    public static void main(String [] args){
-        ListCountry obj = new ListCountry();
-        
-        obj.run();
-    }
+//    public static void main(String [] args){
+//        ListCountry obj = new ListCountry();
+//        
+//        obj.run();
+//    }
     
     public void run(){
         String[] countries = Locale.getISOCountries();
