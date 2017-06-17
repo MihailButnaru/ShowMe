@@ -1,5 +1,19 @@
 package org.travel.car;
 
+import com.lynden.gmapsfx.GoogleMapView;
+import com.lynden.gmapsfx.MapComponentInitializedListener;
+import com.lynden.gmapsfx.javascript.object.DirectionsPane;
+import com.lynden.gmapsfx.javascript.object.GoogleMap;
+import com.lynden.gmapsfx.javascript.object.LatLong;
+import com.lynden.gmapsfx.javascript.object.MapOptions;
+import com.lynden.gmapsfx.javascript.object.MapTypeIdEnum;
+import com.lynden.gmapsfx.service.directions.DirectionStatus;
+import com.lynden.gmapsfx.service.directions.DirectionsRenderer;
+import com.lynden.gmapsfx.service.directions.DirectionsRequest;
+import com.lynden.gmapsfx.service.directions.DirectionsResult;
+import com.lynden.gmapsfx.service.directions.DirectionsService;
+import com.lynden.gmapsfx.service.directions.DirectionsServiceCallback;
+import com.lynden.gmapsfx.service.directions.TravelModes;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import static java.lang.Double.parseDouble;
@@ -9,6 +23,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -30,8 +46,7 @@ import javafx.scene.text.Text;
 /**
  * @author MIHAIL BUTNARU
  */
-public class CarController implements Initializable {
-
+public class CarController  implements Initializable, MapComponentInitializedListener, DirectionsServiceCallback{
     @FXML private TextField startTextID;
     @FXML private TextField endTextID;
     @FXML private Text startID;
@@ -47,6 +62,57 @@ public class CarController implements Initializable {
     //Fuel Choice
     @FXML private ComboBox choiceID;
     ObservableList<String> choice = FXCollections.observableArrayList("Diesel", "Petrol");
+    
+    ///Map Details
+    protected DirectionsService directionsService;
+    protected DirectionsPane directionsPane;
+//
+//    protected StringProperty from = new SimpleStringProperty();
+//    protected StringProperty to = new SimpleStringProperty();
+    protected DirectionsRenderer directionsRenderer = null;
+
+    @FXML protected GoogleMapView mapView;
+
+    @FXML protected TextField fromTextField;
+
+    @FXML protected TextField toTextField;
+
+    @FXML
+    private void toTextFieldAction(ActionEvent event) {
+//        DirectionsRequest request = new DirectionsRequest(from.get(), to.get(), TravelModes.DRIVING);
+//        directionsRenderer = new DirectionsRenderer(true, mapView.getMap(), directionsPane);
+//        directionsService.getRoute(request, this, directionsRenderer);
+    }
+    
+    @FXML
+    private void clearDirections(ActionEvent event) {
+//        directionsRenderer.clearDirections();
+    }
+
+    @Override
+    public void directionsReceived(DirectionsResult results, DirectionStatus status) {
+    }
+
+    @Override
+    public void mapInitialized() {
+        MapOptions options = new MapOptions();
+
+        options.center(new LatLong(47.606189, -122.335842))
+                .zoomControl(false)
+                .zoom(12)
+                .overviewMapControl(false)
+                .panControl(false)
+                .scaleControl(false)
+                .streetViewControl(false)
+                .overviewMapControl(false)
+                .mapTypeControl(false)
+                .overviewMapControl(false)
+                .mapType(MapTypeIdEnum.ROADMAP);
+        GoogleMap map = mapView.createMap(options);
+        directionsService = new DirectionsService();
+        directionsPane = mapView.getDirec();
+    }
+
 
     
 
@@ -55,6 +121,10 @@ public class CarController implements Initializable {
         //It initilize the diesel first
        choiceID.setItems(choice);
        choiceID.getSelectionModel().select("Diesel");
+       
+       //It initilizing the googleMap
+        mapView.addMapInializedListener(this);
+//       
         
     } 
     
@@ -121,11 +191,14 @@ public class CarController implements Initializable {
             int fuelPrice1 = (int) fuelPrice;
             String fuelPriceLabel = String.valueOf(fuelPrice1);
             costID.setText("£ " + fuelPriceLabel);
-            
             }else{
                 
             }
             
+            //Map Derections
+           DirectionsRequest request = new DirectionsRequest(startLocation, endLocation, TravelModes.DRIVING);
+           directionsRenderer = new DirectionsRenderer(true, mapView.getMap(), directionsPane);
+           directionsService.getRoute(request, this, directionsRenderer);
            
             
      

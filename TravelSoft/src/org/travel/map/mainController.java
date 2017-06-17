@@ -11,12 +11,16 @@ import com.lynden.gmapsfx.javascript.object.*;
 import com.lynden.gmapsfx.service.directions.*;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class mainController implements Initializable, MapComponentInitializedListener, DirectionsServiceCallback {
 
@@ -61,8 +65,14 @@ public class mainController implements Initializable, MapComponentInitializedLis
         MapOptions options = new MapOptions();
 
         options.center(new LatLong(47.606189, -122.335842))
-                .zoomControl(true)
+                .zoomControl(false)
                 .zoom(12)
+                .overviewMapControl(false)
+                .panControl(false)
+                .scaleControl(false)
+                .streetViewControl(false)
+                .overviewMapControl(false)
+                .mapTypeControl(false)
                 .overviewMapControl(false)
                 .mapType(MapTypeIdEnum.ROADMAP);
         GoogleMap map = mapView.createMap(options);
@@ -71,3 +81,4 @@ public class mainController implements Initializable, MapComponentInitializedLis
     }
 
 }
+

@@ -9,6 +9,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import com.lynden.gmapsfx.GoogleMapView?>
+
 <AnchorPane id="AnchorPane" prefHeight="780.0" prefWidth="1305.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.travel.car.CarController">
    <children>
       <TextField fx:id="startTextID" layoutX="39.0" layoutY="150.0" prefHeight="68.0" prefWidth="471.0" promptText="Enter Location">
@@ -69,7 +71,17 @@
             <Font name="Comic Sans MS" size="17.0" />
          </font>
       </Label>
-      <Pane fx:id="mapID" layoutX="39.0" layoutY="272.0" prefHeight="411.0" prefWidth="1227.0" />
+      <Pane fx:id="mapID" disable="true" layoutX="39.0" layoutY="272.0" prefHeight="411.0" prefWidth="1227.0">
+         <children>
+            <AnchorPane layoutX="-177.0" layoutY="-7.0" prefHeight="418.0" prefWidth="1408.0">
+                                 <children>
+      <GoogleMapView fx:id="mapView" layoutX="311.0" layoutY="244.0" prefWidth="490.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+<!--      <TextField fx:id="fromTextField" prefHeight="27.0" prefWidth="222.0" promptText="From:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />-->
+<!--      <TextField fx:id="toTextField" layoutX="10.0" layoutY="10.0" onAction="#toTextFieldAction" prefHeight="27.0" prefWidth="222.0" promptText="To:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0" />-->
+<!--      <Button fx:id="clearButton" layoutX="180.0" layoutY="85.0" mnemonicParsing="false" onAction="#clearDirections" text="Clear" />-->
+      </children>
+            </AnchorPane>
+         </children></Pane>
       <TextField fx:id="mpgID" layoutX="510.0" layoutY="230.0" prefHeight="26.0" prefWidth="137.0" promptText="MPG" />
       <ComboBox fx:id="choiceID" layoutX="653.0" layoutY="230.0" prefHeight="26.0" prefWidth="130.0" promptText="Fuel" />
       
