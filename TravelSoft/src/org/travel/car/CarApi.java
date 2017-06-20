@@ -1,7 +1,7 @@
 package org.travel.car;
 
 /**
- * IS getting the details from the API.
+ * IS getting the details from the GOOGLE MAP API and storing in a variable..
  * @author MIHAIL BUTNARU
  */
 
@@ -60,10 +60,4 @@ public class CarApi {
          String timeTravel = json3.getString("text");
          return timeTravel;
      }
-//     public static void main(String[] args) throws IOException{
-//         CarApi api = new CarApi();
-//         String start = "London";
-//         String test = api.displayTime(start, "Chisinau");
-//         System.out.println(test);
-//     }
 }

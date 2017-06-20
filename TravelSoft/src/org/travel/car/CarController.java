@@ -14,31 +14,25 @@ import com.lynden.gmapsfx.service.directions.DirectionsResult;
 import com.lynden.gmapsfx.service.directions.DirectionsService;
 import com.lynden.gmapsfx.service.directions.DirectionsServiceCallback;
 import com.lynden.gmapsfx.service.directions.TravelModes;
-import java.awt.event.KeyEvent;
+import com.lynden.gmapsfx.javascript.JavascriptObject;
+
+
 import java.io.IOException;
-import static java.lang.Double.parseDouble;
-import static java.lang.Float.parseFloat;
 import static java.lang.Integer.parseInt;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.ResourceBundle;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
+
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
+
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
@@ -46,18 +40,18 @@ import javafx.scene.text.Text;
 /**
  * @author MIHAIL BUTNARU
  */
-public class CarController  implements Initializable, MapComponentInitializedListener, DirectionsServiceCallback{
+public class CarController extends JavascriptObject implements Initializable, MapComponentInitializedListener, DirectionsServiceCallback {
     @FXML private TextField startTextID;
     @FXML private TextField endTextID;
     @FXML private Text startID;
     @FXML private Text endID;
     @FXML private Button calculateID;
-    @FXML private Label labelID;
-    @FXML private Label timeID;
-    @FXML private Label litrlesID;
-    @FXML private Label costID;
-    @FXML private Pane mapID;
-    @FXML private TextField mpgID;
+    @FXML private Label labelID;        //Display the Distance (KM)
+    @FXML private Label timeID;             //It display the Distance Time
+    @FXML private Label litrlesID;              //It displays the fuel(litres)
+    @FXML private Label costID;                 //Displays the cost of the fuel(it uses an API)
+    @FXML private Pane mapID;                   //Pane for the MAP
+    @FXML private TextField mpgID;              //MPG MILES PER GALLON
     
     //Fuel Choice
     @FXML private ComboBox choiceID;
@@ -66,40 +60,27 @@ public class CarController  implements Initializable, MapComponentInitializedLis
     ///Map Details
     protected DirectionsService directionsService;
     protected DirectionsPane directionsPane;
-//
-//    protected StringProperty from = new SimpleStringProperty();
-//    protected StringProperty to = new SimpleStringProperty();
-    protected DirectionsRenderer directionsRenderer = null;
-
+    private GoogleMap map;
+    private DirectionsRenderer directionsRenderer = null;
     @FXML protected GoogleMapView mapView;
 
-    @FXML protected TextField fromTextField;
-
-    @FXML protected TextField toTextField;
-
-    @FXML
-    private void toTextFieldAction(ActionEvent event) {
-//        DirectionsRequest request = new DirectionsRequest(from.get(), to.get(), TravelModes.DRIVING);
-//        directionsRenderer = new DirectionsRenderer(true, mapView.getMap(), directionsPane);
-//        directionsService.getRoute(request, this, directionsRenderer);
-    }
+    protected  String language;
+    protected  String region;
+    protected String key;
+   
     
-    @FXML
-    private void clearDirections(ActionEvent event) {
-//        directionsRenderer.clearDirections();
-    }
 
     @Override
     public void directionsReceived(DirectionsResult results, DirectionStatus status) {
     }
-
+    
     @Override
     public void mapInitialized() {
         MapOptions options = new MapOptions();
 
-        options.center(new LatLong(47.606189, -122.335842))
+        options.center(new LatLong(51.49506473, -0.12359619))
                 .zoomControl(false)
-                .zoom(12)
+                .zoom(7)
                 .overviewMapControl(false)
                 .panControl(false)
                 .scaleControl(false)
@@ -111,6 +92,7 @@ public class CarController  implements Initializable, MapComponentInitializedLis
         GoogleMap map = mapView.createMap(options);
         directionsService = new DirectionsService();
         directionsPane = mapView.getDirec();
+        
     }
 
 
@@ -123,14 +105,16 @@ public class CarController  implements Initializable, MapComponentInitializedLis
        choiceID.getSelectionModel().select("Diesel");
        
        //It initilizing the googleMap
-        mapView.addMapInializedListener(this);
-//       
+        mapView.addMapInializedListener(this);       
         
     } 
     
-
+    //Method calculates everything and it displays all the information search by the user.
     @FXML
     private void CalculateAction(ActionEvent event) throws IOException  {
+        
+       //Is initilizing a new map before loading another thing for deleting the old search
+       mapInitialized(); 
         
        DataApi dataAp = new DataApi();
        
@@ -145,7 +129,6 @@ public class CarController  implements Initializable, MapComponentInitializedLis
        }else if(!endLocation.matches(txtFormat)){
            System.out.println("Error end Location"); // Popup design in a cool way
        }else{
-           
            //Setting the start and endLocatoin
             dataAp.setStartAddress(startLocation);
             dataAp.setEndAddress(endLocation);
@@ -171,6 +154,10 @@ public class CarController  implements Initializable, MapComponentInitializedLis
             String test1 = String.valueOf(convertingTheLitres);
             litrlesID.setText(test1);
             String valueFuel = (String) choiceID.getValue();
+            
+            //Test Directions
+//             directionsRenderer.setMap(null);
+
             
             if(valueFuel.equals("Diesel")){
             //Display the diesel Price
@@ -198,10 +185,7 @@ public class CarController  implements Initializable, MapComponentInitializedLis
             //Map Derections
            DirectionsRequest request = new DirectionsRequest(startLocation, endLocation, TravelModes.DRIVING);
            directionsRenderer = new DirectionsRenderer(true, mapView.getMap(), directionsPane);
-           directionsService.getRoute(request, this, directionsRenderer);
-           
-            
-     
+           directionsService.getRoute(request, this, directionsRenderer);  
        } 
     }
     

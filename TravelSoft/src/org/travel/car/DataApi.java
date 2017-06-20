@@ -2,7 +2,7 @@
 package org.travel.car;
 
 /**
- *
+ *  Getter and Setter for getting the data from the GOOGLE MAPS API
  * @author MIHAIL BUTNARU
  */
 public class DataApi {
