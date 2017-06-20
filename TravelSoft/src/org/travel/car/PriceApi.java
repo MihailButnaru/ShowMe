@@ -24,6 +24,7 @@ public class PriceApi {
             String petrolPrice = list[0];
             double currentPetrolPrice = Double.parseDouble(petrolPrice);
             double convertPrice1 = currentPetrolPrice / 100;
+            
             return convertPrice1;
 
         } catch (IOException e) {
