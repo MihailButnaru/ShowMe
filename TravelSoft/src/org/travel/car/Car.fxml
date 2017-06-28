@@ -4,34 +4,24 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <?import com.lynden.gmapsfx.GoogleMapView?>
 
-<AnchorPane id="AnchorPane" prefHeight="780.0" prefWidth="1305.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.travel.car.CarController">
+<AnchorPane id="AnchorPane" prefHeight="780.0" prefWidth="1305.0" style="-fx-background-color: #FAFAFA;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.travel.car.CarController">
    <children>
-      <TextField fx:id="startTextID" layoutX="39.0" layoutY="150.0" prefHeight="68.0" prefWidth="471.0" promptText="Enter Location">
+      <TextField fx:id="startTextID" layoutX="39.0" layoutY="150.0" prefHeight="68.0" prefWidth="471.0" promptText="            Start Location">
          <font>
             <Font size="23.0" />
          </font></TextField>
-      <TextField fx:id="endTextID" layoutX="787.0" layoutY="150.0" prefHeight="68.0" prefWidth="471.0" promptText="Enter Location">
+      <TextField fx:id="endTextID" layoutX="787.0" layoutY="150.0" prefHeight="68.0" prefWidth="471.0" promptText="End Location">
          <font>
             <Font size="23.0" />
          </font></TextField>
-      <Text fx:id="startID" layoutX="189.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Location">
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Text>
-      <Text fx:id="endID" layoutX="953.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Location">
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Text>
-      <Button fx:id="calculateID" layoutX="517.0" layoutY="699.0" mnemonicParsing="false" onAction="#CalculateAction" prefHeight="54.0" prefWidth="244.0" text="Calculate" />
       <Label fx:id="labelID" layoutX="153.0" layoutY="222.0" prefHeight="40.0" prefWidth="108.0" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS" size="17.0" />
@@ -84,7 +74,13 @@
          </children></Pane>
       <TextField fx:id="mpgID" layoutX="510.0" layoutY="230.0" prefHeight="26.0" prefWidth="137.0" promptText="MPG" />
       <ComboBox fx:id="choiceID" layoutX="653.0" layoutY="230.0" prefHeight="26.0" prefWidth="130.0" promptText="Fuel" />
-      <Pane layoutX="-165.0" layoutY="221.0" prefHeight="561.0" prefWidth="205.0" style="-fx-background-color: #ffffff;" />
+      <Pane layoutX="-165.0" layoutY="221.0" prefHeight="561.0" prefWidth="205.0" style="-fx-background-color: FAFAFA;" />
+      <Button fx:id="calculateID" layoutX="525.0" layoutY="698.0" mnemonicParsing="false" onAction="#CalculateAction" prefHeight="49.0" prefWidth="246.0" style="-fx-background-color: #FAFAFA;" stylesheets="@../style/Style.css" />
+      <ImageView fitHeight="72.0" fitWidth="89.0" layoutX="34.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:///Users/MichaelButnaru/Desktop/From.png" />
+         </image>
+      </ImageView>
       
    </children>
 </AnchorPane>

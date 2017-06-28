@@ -68,7 +68,6 @@ public class CarController extends JavascriptObject implements Initializable, Ma
     protected  String region;
     protected String key;
    
-    
 
     @Override
     public void directionsReceived(DirectionsResult results, DirectionStatus status) {
@@ -121,14 +120,19 @@ public class CarController extends JavascriptObject implements Initializable, Ma
        //Getting the startLocation and endLocation
        String startLocation = startTextID.getText();
        String endLocation = endTextID.getText();
+       String mpg =  mpgID.getText();
        
        //Rules allows just string not numbers for search a location
        String txtFormat = "[a-zA-Z\\s]{1,30}";  // It checks for any numbers
+       String test = "\\d*";
+       String test11 = "";
        if(!startLocation.matches(txtFormat)){
            System.out.println("Error start location"); // It will be a popup designed in a cool way
        }else if(!endLocation.matches(txtFormat)){
            System.out.println("Error end Location"); // Popup design in a cool way
-       }else{
+       }else if(!mpg.matches(test) && !mpg.matches(test11))
+           System.out.println("Enter MPG");
+       else{
            //Setting the start and endLocatoin
             dataAp.setStartAddress(startLocation);
             dataAp.setEndAddress(endLocation);

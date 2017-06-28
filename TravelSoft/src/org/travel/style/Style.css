@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 28, 2017, 4:46:19 PM
+    Author     : MichaelButnaru
+*/
+.button{
+    -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/Calculate.png');
+}
+.button:hover{
+   -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/calculate1.png');
+    
+}
+.button:pressed{
+   
+}
