@@ -17,3 +17,51 @@ and open the template in the editor.
 .button:pressed{
    
 }
+
+.carButton{
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/carOff.png');
+}
+.carButton:hover{
+    -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/carOn.png');
+}
+.planeButton{
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-background-size: 50px;
+    -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/planeOff.png');
+}
+.planeButton:hover{
+    -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/planeOn.png');
+}
+.linkedInButton{
+/*    -fx-background-size: 30px 20px;
+    -fx-background-image: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/linkedin.png');
+    -fx-border-color: transparent;*/
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+/*    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;*/
+    -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/linkedin.png');
+}
+.linkedInButton:hover{
+        -fx-background-color: transparent;
+        -fx-border-width: 0;
+        -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/linkedin.png');
+
+}
+.githubButton{
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+    -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/github.png');
+}
+.githubButton:hover{
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+    -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/github.png');
+}
