@@ -43,8 +43,6 @@ import javafx.scene.text.Text;
 public class CarController extends JavascriptObject implements Initializable, MapComponentInitializedListener, DirectionsServiceCallback {
     @FXML private TextField startTextID;
     @FXML private TextField endTextID;
-    @FXML private Text startID;
-    @FXML private Text endID;
     @FXML private Button calculateID;
     @FXML private Label labelID;        //Display the Distance (KM)
     @FXML private Label timeID;             //It display the Distance Time
@@ -67,6 +65,9 @@ public class CarController extends JavascriptObject implements Initializable, Ma
     protected  String language;
     protected  String region;
     protected String key;
+    
+    @FXML private Label fromID;
+    @FXML private Label toID;
    
 
     @Override
