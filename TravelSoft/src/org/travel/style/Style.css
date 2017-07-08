@@ -52,7 +52,7 @@ and open the template in the editor.
 .linkedInButton:hover{
         -fx-background-color: transparent;
         -fx-border-width: 0;
-        -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/linkedin.png');
+        -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/linkedinOn.png');
 
 }
 .githubButton{

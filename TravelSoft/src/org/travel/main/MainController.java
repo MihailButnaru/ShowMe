@@ -5,6 +5,10 @@
  */
 package org.travel.main;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -24,6 +28,7 @@ public class MainController implements Initializable {
     @FXML private Button carID;
     @FXML private Button flightID;
     @FXML private Button linkedIn;
+    @FXML private Button github;
 
     /**
      * Initializes the controller class.
@@ -41,8 +46,20 @@ public class MainController implements Initializable {
     private void flightAction(ActionEvent event) {
     }
 
+    //LinkedIn
     @FXML
-    private void linkedInButton(ActionEvent event) {
+    private void linkedInButton(ActionEvent event) throws URISyntaxException, IOException {
+        if(Desktop.isDesktopSupported()){
+            Desktop.getDesktop().browse(new URI("https://www.linkedin.com/in/mihail-butnaru-a15347a1/"));
+        }
+    }
+    
+    //GitHub
+    @FXML
+    private void githubButton(ActionEvent event) throws URISyntaxException, IOException {
+        if(Desktop.isDesktopSupported()){
+            Desktop.getDesktop().browse(new URI(""));
+        }
     }
     
 }
