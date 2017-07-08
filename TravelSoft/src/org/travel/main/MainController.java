@@ -20,12 +20,10 @@ import javafx.scene.image.ImageView;
  */
 public class MainController implements Initializable {
 
-    @FXML
-    private ImageView imageID;
-    @FXML
-    private Button carID;
-    @FXML
-    private Button flightID;
+    @FXML private ImageView imageID;
+    @FXML private Button carID;
+    @FXML private Button flightID;
+    @FXML private Button linkedIn;
 
     /**
      * Initializes the controller class.
@@ -41,6 +39,10 @@ public class MainController implements Initializable {
 
     @FXML
     private void flightAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void linkedInButton(ActionEvent event) {
     }
     
 }

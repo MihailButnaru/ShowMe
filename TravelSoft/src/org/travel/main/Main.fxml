@@ -14,14 +14,12 @@
          <image>
             <Image url="@../icons/main/mainBackground.png" />
          </image></ImageView>
-      <Button fx:id="carID" layoutX="740.0" layoutY="530.0" mnemonicParsing="false" onAction="#carAction" prefHeight="197.0" prefWidth="204.0" styleClass="carButton" stylesheets="@../style/Style.css">
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor></Button>
-      <Button fx:id="flightID" layoutX="957.0" layoutY="534.0" mnemonicParsing="false" onAction="#flightAction" prefHeight="154.0" prefWidth="147.0" styleClass="planeButton" stylesheets="@../style/Style.css" />
-      <ImageView fitHeight="218.0" fitWidth="328.0" layoutX="30.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="carID" layoutX="672.0" layoutY="416.0" mnemonicParsing="false" onAction="#carAction" prefHeight="312.0" prefWidth="268.0" styleClass="carButton" stylesheets="@../style/Style.css">
+        </Button>
+      <Button fx:id="flightID" layoutX="957.0" layoutY="427.0" mnemonicParsing="false" onAction="#flightAction" prefHeight="201.0" prefWidth="341.0" styleClass="planeButton" stylesheets="@../style/Style.css" />
+      <ImageView fitHeight="235.0" fitWidth="305.0" layoutX="477.0" layoutY="-55.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../logo.png" />
+            <Image url="@../icons/main/logo.png" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="151.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A tool for calculating the distance">
