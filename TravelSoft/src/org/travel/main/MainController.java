@@ -28,6 +28,7 @@ public class MainController implements Initializable {
     @FXML private Button flightID;
     @FXML private Button linkedIn;
     @FXML private Button github;
+    @FXML private Button close;
 
 
     @Override
@@ -82,6 +83,11 @@ public class MainController implements Initializable {
         if(Desktop.isDesktopSupported()){
             Desktop.getDesktop().browse(new URI("https://github.com/MihailButnaru"));
         }
+    }
+
+    @FXML
+    private void closeButton(ActionEvent event) {
+        
     }
     
 }
