@@ -16,10 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
 /**
     * author MIHAIL BUTNARU
     * The Main Controller which connects with carScene and PlaneScene
@@ -40,27 +37,42 @@ public class MainController implements Initializable {
     
     @FXML
     private void carAction(ActionEvent event) throws IOException {
-        Parent windowCar;
+        //CarScene
+        Parent windowCar;       //It loads the layout provided bellow
         windowCar = FXMLLoader.load(getClass().getResource("/org/travel/car/Car.fxml"));
         
-        Scene newScene;
-        newScene = new Scene(windowCar);
+        Scene newScene = new Scene(windowCar);
         
-        Stage mainWindow;
+        Stage mainWindow;           //New Stage
         mainWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
         mainWindow.setScene(newScene);
         mainWindow.show();
     }
 
     @FXML
-    private void flightAction(ActionEvent event) {
+    private void flightAction(ActionEvent event) throws IOException{
+        //PlaneScene
+        
+//        Parent windowPlane;
+//        windowPlane = FXMLLoader.load(getClass().getResource(""));
+//        
+//        Scene newScene;
+//        newScene = new Scene(windowPlane);
+//        
+//        Stage planeStage;
+//        planeStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        planeStage.setScene(newScene);
+//        planeStage.show();
     }
 
     //LinkedIn
     @FXML
     private void linkedInButton(ActionEvent event) throws URISyntaxException, IOException {
+        //Opens the default browser with the link provided.
         if(Desktop.isDesktopSupported()){
             Desktop.getDesktop().browse(new URI("https://www.linkedin.com/in/mihail-butnaru-a15347a1/"));
+        }else{
+            System.out.println("error");
         }
     }
     

@@ -63,5 +63,5 @@ and open the template in the editor.
 .githubButton:hover{
     -fx-border-width: 0;
     -fx-background-color: transparent;
-    -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/github.png');
+    -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/githubOn.png');
 }
