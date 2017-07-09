@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.travel.main;
 
 import java.awt.Desktop;
@@ -13,14 +9,20 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
- * FXML Controller class
- *
- * @author MichaelButnaru
+    * author MIHAIL BUTNARU
+    * The Main Controller which connects with carScene and PlaneScene
  */
 public class MainController implements Initializable {
 
@@ -30,16 +32,24 @@ public class MainController implements Initializable {
     @FXML private Button linkedIn;
     @FXML private Button github;
 
-    /**
-     * Initializes the controller class.
-     */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+    
     @FXML
-    private void carAction(ActionEvent event) {
+    private void carAction(ActionEvent event) throws IOException {
+        Parent windowCar;
+        windowCar = FXMLLoader.load(getClass().getResource("/org/travel/car/Car.fxml"));
+        
+        Scene newScene;
+        newScene = new Scene(windowCar);
+        
+        Stage mainWindow;
+        mainWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
+        mainWindow.setScene(newScene);
+        mainWindow.show();
     }
 
     @FXML
@@ -58,7 +68,7 @@ public class MainController implements Initializable {
     @FXML
     private void githubButton(ActionEvent event) throws URISyntaxException, IOException {
         if(Desktop.isDesktopSupported()){
-            Desktop.getDesktop().browse(new URI(""));
+            Desktop.getDesktop().browse(new URI("https://github.com/MihailButnaru"));
         }
     }
     
