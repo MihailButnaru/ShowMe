@@ -15,11 +15,15 @@ import com.lynden.gmapsfx.service.directions.DirectionsService;
 import com.lynden.gmapsfx.service.directions.DirectionsServiceCallback;
 import com.lynden.gmapsfx.service.directions.TravelModes;
 import com.lynden.gmapsfx.javascript.JavascriptObject;
+import java.awt.Desktop;
 
 
 import java.io.IOException;
 import static java.lang.Integer.parseInt;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Optional;
 
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -27,15 +31,22 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  * @author MIHAIL BUTNARU
@@ -68,6 +79,10 @@ public class CarController extends JavascriptObject implements Initializable, Ma
     
     @FXML private Label fromID;
     @FXML private Label toID;
+    @FXML private Button closeID;
+    @FXML private Button menuID;
+    @FXML private Button linkedIn;
+    @FXML private Button github;
    
 
     @Override
@@ -115,6 +130,9 @@ public class CarController extends JavascriptObject implements Initializable, Ma
         
        //Is initilizing a new map before loading another thing for deleting the old search
        mapInitialized(); 
+       
+       //AlertMPG
+       Alert mpgAlert = null;
         
        DataApi dataAp = new DataApi();
        
@@ -125,15 +143,24 @@ public class CarController extends JavascriptObject implements Initializable, Ma
        
        //Rules allows just string not numbers for search a location
        String txtFormat = "[a-zA-Z\\s]{1,30}";  // It checks for any numbers
-       String test = "\\d*";
+       String test = "^\\d*";
        String test11 = "";
+       
        if(!startLocation.matches(txtFormat)){
            System.out.println("Error start location"); // It will be a popup designed in a cool way
        }else if(!endLocation.matches(txtFormat)){
            System.out.println("Error end Location"); // Popup design in a cool way
-       }else if(!mpg.matches(test) && !mpg.matches(test11))
-           System.out.println("Enter MPG");
-       else{
+       }else if(!mpg.matches(test) || mpg.matches(test11)){
+            Stage stage = null;
+             Parent root = null;
+            stage = new Stage();
+            root = FXMLLoader.load(getClass().getResource("/org/travel/mpg/mpgDesign.fxml"));
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setResizable(false);
+            stage.showAndWait();
+            
+       }else{
            //Setting the start and endLocatoin
             dataAp.setStartAddress(startLocation);
             dataAp.setEndAddress(endLocation);
@@ -161,7 +188,8 @@ public class CarController extends JavascriptObject implements Initializable, Ma
             String valueFuel = (String) choiceID.getValue();
             
             //Test Directions
-//             directionsRenderer.setMap(null);
+            fromID.setText(startTextID.getText());
+            toID.setText(endTextID.getText());
 
             
             if(valueFuel.equals("Diesel")){
@@ -172,7 +200,8 @@ public class CarController extends JavascriptObject implements Initializable, Ma
             double fuelPrice = (double) fuelChoice * (double)fuel.fuelDiesel();
             int fuelPrice1 = (int) fuelPrice;
             String fuelPriceLabel = String.valueOf(fuelPrice1);
-            costID.setText("£ " + fuelPriceLabel);
+            costID.setText(fuelPriceLabel);
+            litrlesID.setText(test1 + " litres");
             
             }else if(valueFuel.equals("Petrol")){
             //Display petrol Price
@@ -182,7 +211,8 @@ public class CarController extends JavascriptObject implements Initializable, Ma
             double fuelPrice = (double) fuelChoice * (double)fuel.fuelPetrol();
             int fuelPrice1 = (int) fuelPrice;
             String fuelPriceLabel = String.valueOf(fuelPrice1);
-            costID.setText("£ " + fuelPriceLabel);
+            costID.setText(fuelPriceLabel);
+            litrlesID.setText(test1 + " litres");
             }else{
                 
             }
@@ -222,4 +252,49 @@ public class CarController extends JavascriptObject implements Initializable, Ma
             return calculated;
             
     }   
+
+    @FXML
+    private void closeIDButton(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Exit Confirmation!");
+        alert.setHeaderText("Are you leaving?");
+        ButtonType yes = new ButtonType("Yes");
+        ButtonType no = new ButtonType("No");
+        alert.getButtonTypes().setAll(yes,no);
+        Optional<ButtonType> result = alert.showAndWait();
+        
+        if(result.isPresent() && (result.get() == yes)){
+           Stage stage = (Stage) closeID.getScene().getWindow();
+           stage.close();
+        }       
+        
+    }
+
+    @FXML
+    private void menuButton(ActionEvent event) throws IOException{
+        Parent windowMenu;       //It loads the layout provided bellow
+        windowMenu = FXMLLoader.load(getClass().getResource("/org/travel/main/Main.fxml"));
+        
+        Scene newScene = new Scene(windowMenu);
+        
+        Stage mainWindow;           //New Stage
+        mainWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
+        mainWindow.setScene(newScene);
+        mainWindow.show();
+    }
+
+    @FXML
+    private void linkedInButton(ActionEvent event) throws URISyntaxException, IOException {
+        if(Desktop.isDesktopSupported()){
+            Desktop.getDesktop().browse(new URI("https://www.linkedin.com/in/mihail-butnaru-a15347a1/"));
+        }
+    }
+
+    @FXML
+    private void gitHubButton(ActionEvent event) throws URISyntaxException, IOException{
+        if(Desktop.isDesktopSupported()){
+            Desktop.getDesktop().browse(new URI("https://github.com/MihailButnaru"));
+        }
+        
+    }
 }

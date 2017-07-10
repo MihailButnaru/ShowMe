@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,8 +15,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 /**
     * author MIHAIL BUTNARU
@@ -86,7 +92,19 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void closeButton(ActionEvent event) {
+    private void closeButton(ActionEvent event) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Exit Confirmation!");
+        alert.setHeaderText("Are you leaving?");
+        ButtonType yes = new ButtonType("Yes");
+        ButtonType no = new ButtonType("No");
+        alert.getButtonTypes().setAll(yes,no);
+        Optional<ButtonType> result = alert.showAndWait();
+        
+        if(result.isPresent() && (result.get() == yes)){
+           Stage stage = (Stage) close.getScene().getWindow();
+           stage.close();
+        }       
         
     }
     

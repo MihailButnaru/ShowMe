@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="616.0" prefWidth="404.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.travel.mpg.MpgDesignController">
+   <children>
+      <Text fill="#615c5c" layoutX="104.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MPG INFORMATION">
+         <font>
+            <Font name="Adobe Naskh Medium" size="28.0" />
+         </font></Text>
+      <Line endX="100.0" layoutX="202.0" layoutY="51.0" startX="-100.0" />
+      <ImageView fitHeight="499.0" fitWidth="321.0" layoutX="52.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/main/mpgInformation.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="close" layoutX="131.0" layoutY="575.0" mnemonicParsing="false" onAction="#CloseID" prefHeight="32.0" prefWidth="149.0" style="-fx-background-color: #2196F3;" text="Close" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

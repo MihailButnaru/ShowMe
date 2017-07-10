@@ -17,7 +17,7 @@ import javafx.stage.StageStyle;
  *
  * @author MichaelButnaru
  */
-public class test extends Application{
+public class main extends Application{
     
     public void start(Stage primaryStage){
         try{
