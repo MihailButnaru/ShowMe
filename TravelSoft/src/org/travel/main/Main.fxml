@@ -15,13 +15,9 @@
             <Image url="@../icons/main/mainBackground.png" />
          </image></ImageView>
       <Button fx:id="carID" layoutX="672.0" layoutY="416.0" mnemonicParsing="false" onAction="#carAction" prefHeight="312.0" prefWidth="268.0" styleClass="carButton" stylesheets="@../style/Style.css">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
+         </Button>
       <Button fx:id="flightID" layoutX="957.0" layoutY="427.0" mnemonicParsing="false" onAction="#flightAction" prefHeight="201.0" prefWidth="341.0" styleClass="planeButton" stylesheets="@../style/Style.css">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
+        </Button>
       <Text fill="#f44336" layoutX="151.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A tool for calculating the distance">
          <font>
             <Font name="System Bold" size="38.0" />
@@ -36,14 +32,10 @@
          <font>
             <Font size="1.0" />
          </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
+        
       </Button>
       <Button fx:id="github" layoutX="61.0" layoutY="719.0" mnemonicParsing="false" onAction="#githubButton" prefHeight="57.0" prefWidth="43.0" styleClass="githubButton" stylesheets="@../style/Style.css">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
+         </Button>
       <ImageView fitHeight="284.0" fitWidth="204.0" layoutX="554.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/main/logoP.png" />

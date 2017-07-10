@@ -47,6 +47,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * @author MIHAIL BUTNARU
@@ -157,6 +158,7 @@ public class CarController extends JavascriptObject implements Initializable, Ma
             root = FXMLLoader.load(getClass().getResource("/org/travel/mpg/mpgDesign.fxml"));
             stage.setScene(new Scene(root));
             stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initStyle(StageStyle.UNDECORATED);
             stage.setResizable(false);
             stage.showAndWait();
             
