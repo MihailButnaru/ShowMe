@@ -2,7 +2,7 @@
 /* 
     Created on : Jun 28, 2017, 4:46:19 PM
     Author     : MichaelButnaru
-*/
+**/
 .button{
     -fx-graphic: url('../icons/car/Calculate.png');
 }
@@ -49,12 +49,12 @@
 .githubButton{
     -fx-border-width: 0;
     -fx-background-color: transparent;
-    -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/github.png');
+    -fx-graphic: url('../icons/main/github.png');
 }
 .githubButton:hover{
     -fx-border-width: 0;
     -fx-background-color: transparent;
-    -fx-graphic: url('file:///Users/MichaelButnaru/Desktop/GitHub/ShowMe/TravelSoft/src/org/travel/icons/main/githubOn.png');
+    -fx-graphic: url('../icons/main/githubOn.png');
 }
 .closeButton{
     -fx-border-width: 0;
@@ -105,4 +105,8 @@
     -fx-border-width: 0;
     -fx-background-color: transparent;
     -fx-graphic: url('../icons/car/githubOff.png');
+}
+.anchorPane{
+    -fx-border-width: 0;
+    -fx-background-color: null;
 }

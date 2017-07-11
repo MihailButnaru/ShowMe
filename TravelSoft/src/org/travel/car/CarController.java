@@ -148,7 +148,21 @@ public class CarController extends JavascriptObject implements Initializable, Ma
        String test11 = "";
        
        if(!startLocation.matches(txtFormat)){
-           System.out.println("Error start location"); // It will be a popup designed in a cool way
+           
+            Stage stage = null;
+            Parent root = null;
+            stage = new Stage();
+            root = FXMLLoader.load(getClass().getResource("/org/travel/errorInterface/WrongLocation.fxml"));
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setX(200);
+            stage.setY(150);
+            stage.setResizable(false);
+            stage.showAndWait();
+    
+            
+           
        }else if(!endLocation.matches(txtFormat)){
            System.out.println("Error end Location"); // Popup design in a cool way
        }else if(!mpg.matches(test) || mpg.matches(test11)){

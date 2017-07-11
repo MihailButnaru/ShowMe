@@ -5,17 +5,36 @@
  */
 package org.travel.errorInterface;
 
+import java.io.IOException;
 import java.util.Arrays;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  *
  * @author MichaelButnaru
  */
-public class TestClass {
+public class TestClass extends Application{
+    public void start(Stage primaryStage){
+//        try{
+//            Parent root = FXMLLoader.load(getClass().getResource("WrongLocation.fxml"));
+//            Scene scene = new Scene(root);
+//            primaryStage.setResizable(false);
+//            primaryStage.setScene(scene);
+//            primaryStage.show();
+//        }catch(IOException e){
+//            
+//        }
+        
+    }
     public static void main(String [] args){
-        System.out.println("Let's test to see if is worknig");
-       String test = System.getProperty("user.name");
-       String[] test1 = test.split("(?=\\p{Upper})");
-        System.out.println(Arrays.toString(test1));
+//        launch(args);
+//        System.out.println("Let's test to see if is worknig");
+//       String test = System.getProperty("user.name");
+//       String[] test1 = test.split("(?=\\p{Upper})");
+//        System.out.println(Arrays.toString(test1));
     }
 }
