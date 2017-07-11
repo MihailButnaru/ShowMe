@@ -149,6 +149,7 @@ public class CarController extends JavascriptObject implements Initializable, Ma
        
        if(!startLocation.matches(txtFormat)){
            
+            //Information when there's an error
             Stage stage = null;
             Parent root = null;
             stage = new Stage();
@@ -156,15 +157,26 @@ public class CarController extends JavascriptObject implements Initializable, Ma
             stage.setScene(new Scene(root));
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.initStyle(StageStyle.UNDECORATED);
-            stage.setX(200);
-            stage.setY(150);
+            stage.setX(540);
+            stage.setY(337);
             stage.setResizable(false);
             stage.showAndWait();
-    
-            
-           
+       
        }else if(!endLocation.matches(txtFormat)){
-           System.out.println("Error end Location"); // Popup design in a cool way
+           
+           //Information when there's an error
+            Stage stage = null;
+            Parent root = null;
+            stage = new Stage();
+            root = FXMLLoader.load(getClass().getResource("/org/travel/errorInterface/WrongLocation.fxml"));
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setX(540);
+            stage.setY(337);
+            stage.setResizable(false);
+            stage.showAndWait();
+            
        }else if(!mpg.matches(test) || mpg.matches(test11)){
             Stage stage = null;
              Parent root = null;

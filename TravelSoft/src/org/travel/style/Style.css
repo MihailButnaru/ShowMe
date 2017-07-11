@@ -110,3 +110,13 @@
     -fx-border-width: 0;
     -fx-background-color: null;
 }
+.closeButton1{
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+    -fx-graphic: url('../icons/car/close11.png');
+}
+.closeButton1:hover{
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+    -fx-graphic: url('../icons/car/close22.png');
+}
