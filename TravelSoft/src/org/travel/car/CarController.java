@@ -76,7 +76,7 @@ public class CarController extends JavascriptObject implements Initializable, Ma
 
     protected  String language;
     protected  String region;
-    protected String key;
+    protected  String key;
     
     @FXML private Label fromID;
     @FXML private Label toID;
@@ -150,10 +150,8 @@ public class CarController extends JavascriptObject implements Initializable, Ma
        if(!startLocation.matches(txtFormat)){
            
             //Information when there's an error
-            Stage stage = null;
-            Parent root = null;
-            stage = new Stage();
-            root = FXMLLoader.load(getClass().getResource("/org/travel/errorInterface/WrongLocation.fxml"));
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("/org/travel/errorInterface/WrongLocation.fxml"));
             stage.setScene(new Scene(root));
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.initStyle(StageStyle.UNDECORATED);
@@ -165,9 +163,8 @@ public class CarController extends JavascriptObject implements Initializable, Ma
        }else if(!endLocation.matches(txtFormat)){
            
            //Information when there's an error
-            Stage stage = null;
             Parent root = null;
-            stage = new Stage();
+            Stage stage = new Stage();
             root = FXMLLoader.load(getClass().getResource("/org/travel/errorInterface/WrongLocation.fxml"));
             stage.setScene(new Scene(root));
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -179,9 +176,8 @@ public class CarController extends JavascriptObject implements Initializable, Ma
             
        }else if(!mpg.matches(test) || mpg.matches(test11)){
            
-            Stage stage = null;
             Parent root = null;
-            stage = new Stage();
+            Stage stage = new Stage();
             root = FXMLLoader.load(getClass().getResource("/org/travel/mpg/mpgDesign.fxml"));
             stage.setScene(new Scene(root));
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -190,7 +186,7 @@ public class CarController extends JavascriptObject implements Initializable, Ma
             stage.showAndWait();
             
        }else{
-           //Setting the start and endLocatoin
+            //Setting the start and endLocatoin
             dataAp.setStartAddress(startLocation);
             dataAp.setEndAddress(endLocation);
             
@@ -200,12 +196,10 @@ public class CarController extends JavascriptObject implements Initializable, Ma
             String endName = dataAp.getEndAddress();
        
             //Getting the distance and split in several strings
-            String distance = null;
-            String[] distanceNumber = null;
-            
+          
             try{
-            distance = carAp.displayData(startName,endName);
-            distanceNumber = distance.split(" ");
+            String distance = carAp.displayData(startName,endName);
+            String[] distanceNumber = distance.split(" ");
             
             labelID.setText(distance);
             
@@ -250,7 +244,15 @@ public class CarController extends JavascriptObject implements Initializable, Ma
                 
             }
             }catch(NullPointerException e){
-                System.out.println("NullPointerException");
+                Parent root = FXMLLoader.load(getClass().getResource("/org/travel/errorInterface/notFound.fxml"));
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.initStyle(StageStyle.UNDECORATED);
+                stage.setX(935);
+                stage.setY(415);
+                stage.setResizable(false);
+                stage.showAndWait();
             }
             
             //Map Derections
