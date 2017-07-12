@@ -41,6 +41,7 @@ public class CarApi {
      }
      
      public String displayData(String start, String end) throws IOException{
+         try{
          JSONObject json = readJsonFromUrl("https://maps.googleapis.com/maps/api/directions/json?origin="+ start + "&destination="+end+"4&key=AIzaSyC62daLUcu1lxrLXbc1RjapmU2dDA_AIIY");
          JSONArray jsonarr = json.getJSONArray("routes");
          JSONObject json1 = jsonarr.getJSONObject(0);
@@ -49,8 +50,14 @@ public class CarApi {
          JSONObject json3 = json2.getJSONObject("distance");
          String distance = json3.getString("text");
          return distance;  
+         }catch(JSONException e){
+             // It displays a window with the location Problem
+             System.out.println("There's an error!");
+         }
+         return null;
      }
      public String displayTime(String start, String end) throws IOException{
+         try{
          JSONObject json = readJsonFromUrl("https://maps.googleapis.com/maps/api/directions/json?origin="+ start + "&destination="+end+"4&key=AIzaSyC62daLUcu1lxrLXbc1RjapmU2dDA_AIIY");
          JSONArray jsonarr = json.getJSONArray("routes");
          JSONObject json1 = jsonarr.getJSONObject(0);
@@ -59,5 +66,11 @@ public class CarApi {
          JSONObject json3 = json2.getJSONObject("duration");
          String timeTravel = json3.getString("text");
          return timeTravel;
+         }catch(JSONException e){
+             // Should Display a window with the Time Error
+             System.out.println("Problem with Display Time");
+             
+         }
+         return null;
      }
 }

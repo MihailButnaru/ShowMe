@@ -178,8 +178,9 @@ public class CarController extends JavascriptObject implements Initializable, Ma
             stage.showAndWait();
             
        }else if(!mpg.matches(test) || mpg.matches(test11)){
+           
             Stage stage = null;
-             Parent root = null;
+            Parent root = null;
             stage = new Stage();
             root = FXMLLoader.load(getClass().getResource("/org/travel/mpg/mpgDesign.fxml"));
             stage.setScene(new Scene(root));
@@ -199,8 +200,12 @@ public class CarController extends JavascriptObject implements Initializable, Ma
             String endName = dataAp.getEndAddress();
        
             //Getting the distance and split in several strings
-            String distance = carAp.displayData(startName,endName);
-            String[] distanceNumber = distance.split(" ");
+            String distance = null;
+            String[] distanceNumber = null;
+            
+            try{
+            distance = carAp.displayData(startName,endName);
+            distanceNumber = distance.split(" ");
             
             labelID.setText(distance);
             
@@ -243,6 +248,9 @@ public class CarController extends JavascriptObject implements Initializable, Ma
             litrlesID.setText(test1 + " litres");
             }else{
                 
+            }
+            }catch(NullPointerException e){
+                System.out.println("NullPointerException");
             }
             
             //Map Derections
