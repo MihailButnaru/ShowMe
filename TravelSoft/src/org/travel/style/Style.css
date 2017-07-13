@@ -120,3 +120,34 @@
     -fx-background-color: transparent;
     -fx-graphic: url('../icons/car/close22.png');
 }
+/*
+*
+*  TabPane Style for Plane Scene
+*/
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+.tab-pane {
+    -fx-tab-min-width: 90px;
+}
+.tab {
+    -fx-background-insets: 0 1 0 1, 0 , 0;
+}
+.tab-pane .tab{
+    -fx-background-color: white;
+    
+    	
+}
+.tab-pane .tab:selected{
+    -fx-background-color: #64B5F6;
+}
+.tab .tab-label{
+    -fx-alignment: CENTER;
+    -fx-text-fill: black;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+}

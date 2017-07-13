@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="777.0" prefWidth="1305.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="72.0" prefWidth="1305.0" style="-fx-background-color: #37474f;">
+         <children>
+            <Button fx:id="closeID" layoutX="1248.0" layoutY="15.0" mnemonicParsing="false" onAction="#closeIDButton" prefHeight="34.0" prefWidth="55.0" styleClass="closeCarButton" stylesheets="@../../style/Style.css" />
+            <ImageView fitHeight="75.0" fitWidth="85.0" layoutX="653.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../main/logoP.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="menuID" layoutX="1189.0" layoutY="14.0" mnemonicParsing="false" onAction="#menuButton" prefHeight="36.0" prefWidth="39.0" styleClass="menuButton" stylesheets="@../../style/Style.css" />
+         </children></Pane>
+      <Pane layoutX="-1.0" layoutY="702.0" prefHeight="75.0" prefWidth="1306.0">
+         <children>
+            <Button fx:id="linkedIn" layoutX="1159.0" layoutY="2.0" mnemonicParsing="false" onAction="#linkedInButton" prefHeight="64.0" prefWidth="78.0" styleClass="linkedInCarButton" stylesheets="@../../style/Style.css" />
+            <Button fx:id="github" layoutX="1230.0" layoutY="2.0" mnemonicParsing="false" onAction="#gitHubButton" styleClass="githubCarButton" stylesheets="@../../style/Style.css" />
+         </children>
+      </Pane>
+      <TabPane layoutY="73.0" prefHeight="704.0" prefWidth="380.0" style="-fx-background-color: #ffffff;" stylesheets="@../../style/Style.css" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="                  One Way              ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="659.0" prefWidth="1128.0">
+                     <children>
+                        <Text fill="#8d8a8a" layoutX="10.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destination Details" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="                  Return                     ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      
+   </children>
+</AnchorPane>
