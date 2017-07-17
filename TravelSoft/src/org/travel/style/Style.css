@@ -3,16 +3,14 @@
     Created on : Jun 28, 2017, 4:46:19 PM
     Author     : MichaelButnaru
 **/
-.button{
+.buttoncalculate{
     -fx-graphic: url('../icons/car/Calculate.png');
 }
-.button:hover{
+.buttoncalculate:hover{
      -fx-graphic: url('../icons/car/calculate1.png');
     
 }
-.button:pressed{
-   
-}
+
 
 .carButton{
     -fx-border-color: transparent;
@@ -134,9 +132,7 @@
     -fx-background-insets: 0 1 0 1, 0 , 0;
 }
 .tab-pane .tab{
-    -fx-background-color: white;
-    
-    	
+    -fx-background-color: white;  	
 }
 .tab-pane .tab:selected{
     -fx-background-color: #64B5F6;
