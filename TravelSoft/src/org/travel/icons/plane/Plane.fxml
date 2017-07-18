@@ -11,6 +11,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -40,24 +41,57 @@
                         </Text>
                         <TextField fx:id="fromID" layoutX="47.0" layoutY="163.0" prefHeight="43.0" prefWidth="321.0" promptText="From" />
                         <TextField fx:id="toID" layoutX="47.0" layoutY="220.0" prefHeight="43.0" prefWidth="321.0" promptText="To" />
-                        <Text layoutX="13.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travel Dates" />
-                        <Text layoutX="198.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passenger Details" />
-                        <DatePicker layoutX="11.0" layoutY="339.0" prefHeight="26.0" prefWidth="165.0" />
-                        <ComboBox layoutX="195.0" layoutY="339.0" prefHeight="26.0" prefWidth="168.0" />
-                        <ComboBox layoutX="195.0" layoutY="381.0" prefHeight="26.0" prefWidth="168.0" />
-                        <DatePicker disable="true" layoutX="11.0" layoutY="381.0" prefHeight="26.0" prefWidth="164.0" />
+                        <Text fill="#42a5f5" layoutX="13.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travel Dates">
+                           <font>
+                              <Font name="Georgia" size="18.0" />
+                           </font></Text>
+                        <Text fill="#42a5f5" layoutX="198.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passenger Details">
+                           <font>
+                              <Font name="Georgia" size="18.0" />
+                           </font></Text>
+                        <DatePicker fx:id="dateID" layoutX="11.0" layoutY="339.0" prefHeight="26.0" prefWidth="165.0" style="-fx-background-color: white;" />
+                        <ComboBox fx:id="passengerID" layoutX="195.0" layoutY="339.0" prefHeight="26.0" prefWidth="168.0" promptText="Adults" style="-fx-background-color: white; -fx-text-fill: white;" />
+                        <ComboBox fx:id="typeID" layoutX="195.0" layoutY="381.0" prefHeight="26.0" prefWidth="168.0" promptText="Cabin Class" style="-fx-background-color: white;" />
+                        <DatePicker fx:id="DateID1" disable="true" layoutX="11.0" layoutY="381.0" prefHeight="26.0" prefWidth="165.0" />
                         <ImageView fitHeight="137.0" fitWidth="343.0" layoutX="14.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../../../../plane.png" />
                            </image>
                         </ImageView>
                         <Button fx:id="searchID" layoutX="147.0" layoutY="610.0" mnemonicParsing="false" onAction="#search" text="Button" />
+                        <Line endX="63.0" layoutX="297.0" layoutY="365.0" startX="-100.0" strokeMiterLimit="4.0" />
+                        <Line endX="63.0" layoutX="298.0" layoutY="406.0" startX="-100.0" strokeMiterLimit="4.0" />
                      </children></AnchorPane>
             </content>
           </Tab>
           <Tab text="                  Return                     ">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text fill="#8d8a8a" layoutX="10.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destination Details">
+                           <font>
+                              <Font name="Adobe Gurmukhi Bold" size="20.0" />
+                           </font>
+                        </Text>
+                        <TextField layoutX="47.0" layoutY="163.0" prefHeight="43.0" prefWidth="321.0" promptText="From" />
+                        <TextField layoutX="47.0" layoutY="220.0" prefHeight="43.0" prefWidth="321.0" promptText="To" />
+                        <Text fill="#42a5f5" layoutX="13.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travel Dates">
+                           <font>
+                              <Font name="Georgia" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#42a5f5" layoutX="198.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passenger Details">
+                           <font>
+                              <Font name="Georgia" size="18.0" />
+                           </font>
+                        </Text>
+                        <DatePicker layoutX="11.0" layoutY="339.0" prefHeight="26.0" prefWidth="165.0" style="-fx-background-color: white;" />
+                        <DatePicker layoutX="11.0" layoutY="381.0" prefHeight="26.0" prefWidth="165.0" style="-fx-background-color: white;" />
+                        <ComboBox layoutX="195.0" layoutY="339.0" prefHeight="26.0" prefWidth="168.0" promptText="Adults" style="-fx-background-color: white;" />
+                        <ComboBox layoutX="195.0" layoutY="381.0" prefHeight="26.0" prefWidth="168.0" promptText="Cabin Class" style="-fx-background-color: white;" />
+                        <Line endX="63.0" layoutX="297.0" layoutY="365.0" startX="-100.0" />
+                        <Line endX="63.0" layoutX="298.0" layoutY="406.0" startX="-100.0" />
+                     </children></AnchorPane>
             </content>
           </Tab>
         </tabs>

@@ -60,16 +60,16 @@ public class MainController implements Initializable {
     private void flightAction(ActionEvent event) throws IOException{
         //PlaneScene
         
-//        Parent windowPlane;
-//        windowPlane = FXMLLoader.load(getClass().getResource(""));
-//        
-//        Scene newScene;
-//        newScene = new Scene(windowPlane);
-//        
-//        Stage planeStage;
-//        planeStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//        planeStage.setScene(newScene);
-//        planeStage.show();
+        Parent windowPlane;
+        windowPlane = FXMLLoader.load(getClass().getResource("/org/travel/icons/plane/Plane.fxml"));
+        
+        Scene newScene;
+        newScene = new Scene(windowPlane);
+        
+        Stage planeStage;
+        planeStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        planeStage.setScene(newScene);
+        planeStage.show();
     }
 
     //LinkedIn
