@@ -15,20 +15,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.travel.icons.plane.PlaneController">
+<AnchorPane id="AnchorPane" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.travel.plane.PlaneController">
    <children>
       <Pane prefHeight="72.0" prefWidth="1305.0" style="-fx-background-color: #37474f;">
          <children>
-            <Button fx:id="closeID" layoutX="1248.0" layoutY="15.0" mnemonicParsing="false" onAction="#closeIDButton" prefHeight="34.0" prefWidth="55.0" styleClass="closeCarButton" stylesheets="@../../style/Style.css" />
+            <Button fx:id="closeID" layoutX="1248.0" layoutY="15.0" mnemonicParsing="false" onAction="#closeIDButton" prefHeight="34.0" prefWidth="55.0" styleClass="closeCarButton" stylesheets="@../style/Style.css" />
             <ImageView fitHeight="75.0" fitWidth="85.0" layoutX="653.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../main/logoP.png" />
+                  <Image url="@../icons/main/logoP.png" />
                </image>
             </ImageView>
-            <Button fx:id="menuID" layoutX="1189.0" layoutY="14.0" mnemonicParsing="false" onAction="#menuButton" prefHeight="36.0" prefWidth="39.0" styleClass="menuButton" stylesheets="@../../style/Style.css" />
+            <Button fx:id="menuID" layoutX="1189.0" layoutY="14.0" mnemonicParsing="false" onAction="#menuButton" prefHeight="36.0" prefWidth="39.0" styleClass="menuButton" stylesheets="@../style/Style.css" />
          </children></Pane>
       <Pane layoutX="-1.0" layoutY="702.0" prefHeight="75.0" prefWidth="1306.0" />
-      <TabPane layoutY="73.0" prefHeight="704.0" prefWidth="380.0" style="-fx-background-color: #ffffff;" stylesheets="@../../style/Style.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutY="73.0" prefHeight="704.0" prefWidth="380.0" style="-fx-background-color: #ffffff;" stylesheets="@../style/Style.css" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="                  One Way              ">
             <content>
@@ -55,7 +55,7 @@
                         <DatePicker fx:id="DateID1" disable="true" layoutX="11.0" layoutY="381.0" prefHeight="26.0" prefWidth="165.0" />
                         <ImageView fitHeight="137.0" fitWidth="343.0" layoutX="14.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../plane.png" />
+                              <Image url="@../icons/main/plane.png" />
                            </image>
                         </ImageView>
                         <Button fx:id="searchID" layoutX="147.0" layoutY="610.0" mnemonicParsing="false" onAction="#search" text="Button" />
@@ -73,8 +73,8 @@
                               <Font name="Adobe Gurmukhi Bold" size="20.0" />
                            </font>
                         </Text>
-                        <TextField layoutX="47.0" layoutY="163.0" prefHeight="43.0" prefWidth="321.0" promptText="From" />
-                        <TextField layoutX="47.0" layoutY="220.0" prefHeight="43.0" prefWidth="321.0" promptText="To" />
+                        <TextField fx:id="fromID1" layoutX="47.0" layoutY="163.0" prefHeight="43.0" prefWidth="321.0" promptText="From" />
+                        <TextField fx:id="toID1" layoutX="47.0" layoutY="220.0" prefHeight="43.0" prefWidth="321.0" promptText="To" />
                         <Text fill="#42a5f5" layoutX="13.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travel Dates">
                            <font>
                               <Font name="Georgia" size="18.0" />
@@ -87,8 +87,8 @@
                         </Text>
                         <DatePicker layoutX="11.0" layoutY="339.0" prefHeight="26.0" prefWidth="165.0" style="-fx-background-color: white;" />
                         <DatePicker layoutX="11.0" layoutY="381.0" prefHeight="26.0" prefWidth="165.0" style="-fx-background-color: white;" />
-                        <ComboBox layoutX="195.0" layoutY="339.0" prefHeight="26.0" prefWidth="168.0" promptText="Adults" style="-fx-background-color: white;" />
-                        <ComboBox layoutX="195.0" layoutY="381.0" prefHeight="26.0" prefWidth="168.0" promptText="Cabin Class" style="-fx-background-color: white;" />
+                        <ComboBox fx:id="passengerID1" layoutX="195.0" layoutY="339.0" prefHeight="26.0" prefWidth="168.0" promptText="Adults" style="-fx-background-color: white;" />
+                        <ComboBox fx:id="typeID1" layoutX="195.0" layoutY="381.0" prefHeight="26.0" prefWidth="168.0" promptText="Cabin Class" style="-fx-background-color: white;" />
                         <Line endX="63.0" layoutX="297.0" layoutY="365.0" startX="-100.0" />
                         <Line endX="63.0" layoutX="298.0" layoutY="406.0" startX="-100.0" />
                      </children></AnchorPane>
@@ -98,8 +98,8 @@
       </TabPane>
       <Pane layoutX="379.0" layoutY="73.0" prefHeight="705.0" prefWidth="926.0" style="-fx-background-color: #FAFAFA;">
          <children>
-            <Button fx:id="linkedIn" layoutX="775.0" layoutY="624.0" mnemonicParsing="false" onAction="#linkedInButton" prefHeight="64.0" prefWidth="78.0" styleClass="linkedInCarButton" stylesheets="@../../style/Style.css" />
-            <Button fx:id="github" layoutX="841.0" layoutY="624.0" mnemonicParsing="false" onAction="#gitHubButton" styleClass="githubCarButton" stylesheets="@../../style/Style.css" />
+            <Button fx:id="linkedIn" layoutX="775.0" layoutY="624.0" mnemonicParsing="false" onAction="#linkedInButton" prefHeight="64.0" prefWidth="78.0" styleClass="linkedInCarButton" stylesheets="@../style/Style.css" />
+            <Button fx:id="github" layoutX="841.0" layoutY="624.0" mnemonicParsing="false" onAction="#gitHubButton" styleClass="githubCarButton" stylesheets="@../style/Style.css" />
             <Pane fx:id="flightBlueID" layoutX="39.0" layoutY="17.0" prefHeight="136.0" prefWidth="850.0" style="-fx-background-color: #2962FF;">
                <children>
                   <Text fill="WHITE" layoutX="44.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose a flight">

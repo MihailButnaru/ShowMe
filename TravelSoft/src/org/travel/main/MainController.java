@@ -61,7 +61,7 @@ public class MainController implements Initializable {
         //PlaneScene
         
         Parent windowPlane;
-        windowPlane = FXMLLoader.load(getClass().getResource("/org/travel/icons/plane/Plane.fxml"));
+        windowPlane = FXMLLoader.load(getClass().getResource("/org/travel/plane/Plane.fxml"));
         
         Scene newScene;
         newScene = new Scene(windowPlane);

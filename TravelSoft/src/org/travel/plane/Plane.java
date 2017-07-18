@@ -1,6 +1,6 @@
 
 
-package org.travel.icons.plane;
+package org.travel.plane;
 
 /**
  *

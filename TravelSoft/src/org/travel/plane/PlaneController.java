@@ -1,6 +1,8 @@
 
-package org.travel.icons.plane;
+package org.travel.plane;
 
+import org.travel.plane.Plane;
+import org.travel.plane.DataApi;
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
@@ -54,6 +56,14 @@ public class PlaneController implements Initializable {
 
     ObservableList<Integer> passengerNumber = FXCollections.observableArrayList(1,2,3);
     ObservableList<String> flightType = FXCollections.observableArrayList("Economy", "Premium Economy", "Business Class", "First Class");
+    
+    @FXML private TextField fromID1;
+    @FXML private TextField toID1;
+    @FXML private ComboBox<Integer> passengerID1;
+    @FXML private ComboBox<String> typeID1;
+    
+    ObservableList<Integer> passengerNumber1 = FXCollections.observableArrayList(1,2,3);
+    ObservableList<String> flightType1 = FXCollections.observableArrayList("Economy", "Premium Economy", "Business Class", "First Class");
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -160,9 +170,6 @@ public class PlaneController implements Initializable {
             plane.setPassengers(numberPassengers);
             
             
-//            String test = data.displayPrice(plane.getDateFrom(), plane.getDateTo());
-//            System.out.println(test);
-             data.test1();
            
             flightID.setVisible(true);
         
