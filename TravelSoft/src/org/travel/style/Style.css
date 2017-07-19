@@ -118,6 +118,16 @@
     -fx-background-color: transparent;
     -fx-graphic: url('../icons/car/close22.png');
 }
+.searchButton{
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+    -fx-graphic: url('../icons/plane/search.png');
+}
+.searchButton:hover{
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+    -fx-graphic: url('../icons/plane/searchOn.png');
+}
 /*
 *
 *  TabPane Style for Plane Scene

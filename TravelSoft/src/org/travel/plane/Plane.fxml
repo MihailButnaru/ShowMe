@@ -39,8 +39,8 @@
                               <Font name="Adobe Gurmukhi Bold" size="20.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="fromID" layoutX="47.0" layoutY="163.0" prefHeight="43.0" prefWidth="321.0" promptText="From" />
-                        <TextField fx:id="toID" layoutX="47.0" layoutY="220.0" prefHeight="43.0" prefWidth="321.0" promptText="To" />
+                        <TextField fx:id="fromID" layoutX="11.0" layoutY="163.0" prefHeight="43.0" prefWidth="357.0" promptText="From" />
+                        <TextField fx:id="toID" layoutX="12.0" layoutY="220.0" prefHeight="43.0" prefWidth="357.0" promptText="To" />
                         <Text fill="#42a5f5" layoutX="13.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travel Dates">
                            <font>
                               <Font name="Georgia" size="18.0" />
@@ -58,9 +58,14 @@
                               <Image url="@../icons/main/plane.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="searchID" layoutX="147.0" layoutY="610.0" mnemonicParsing="false" onAction="#search" text="Button" />
+                        <Button fx:id="searchID" layoutX="33.0" layoutY="581.0" mnemonicParsing="false" onAction="#search" styleClass="searchButton" stylesheets="@../style/Style.css" />
                         <Line endX="63.0" layoutX="297.0" layoutY="365.0" startX="-100.0" strokeMiterLimit="4.0" />
                         <Line endX="63.0" layoutX="298.0" layoutY="406.0" startX="-100.0" strokeMiterLimit="4.0" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="116.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/main/logoNew.png" />
+                           </image>
+                        </ImageView>
                      </children></AnchorPane>
             </content>
           </Tab>
@@ -73,8 +78,8 @@
                               <Font name="Adobe Gurmukhi Bold" size="20.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="fromID1" layoutX="47.0" layoutY="163.0" prefHeight="43.0" prefWidth="321.0" promptText="From" />
-                        <TextField fx:id="toID1" layoutX="47.0" layoutY="220.0" prefHeight="43.0" prefWidth="321.0" promptText="To" />
+                        <TextField fx:id="fromID1" layoutX="11.0" layoutY="163.0" prefHeight="43.0" prefWidth="357.0" promptText="From" />
+                        <TextField fx:id="toID1" layoutX="11.0" layoutY="220.0" prefHeight="43.0" prefWidth="357.0" promptText="To" />
                         <Text fill="#42a5f5" layoutX="13.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travel Dates">
                            <font>
                               <Font name="Georgia" size="18.0" />
@@ -91,6 +96,17 @@
                         <ComboBox fx:id="typeID1" layoutX="195.0" layoutY="381.0" prefHeight="26.0" prefWidth="168.0" promptText="Cabin Class" style="-fx-background-color: white;" />
                         <Line endX="63.0" layoutX="297.0" layoutY="365.0" startX="-100.0" />
                         <Line endX="63.0" layoutX="298.0" layoutY="406.0" startX="-100.0" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="116.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/main/logoNew.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="137.0" fitWidth="343.0" layoutX="14.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/main/plane.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="33.0" layoutY="581.0" mnemonicParsing="false" styleClass="searchButton" stylesheets="@../style/Style.css" />
                      </children></AnchorPane>
             </content>
           </Tab>
@@ -107,18 +123,37 @@
                         <Font size="19.0" />
                      </font>
                   </Text>
+                  <Text fill="WHITE" layoutX="280.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The update will be soon.">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Text>
                </children>
             </Pane>
             <Pane fx:id="flightID" layoutX="39.0" layoutY="172.0" prefHeight="112.0" prefWidth="851.0" style="-fx-background-color: #ffffff;">
                <children>
-                  <Label fx:id="priceID" layoutX="14.0" layoutY="14.0" text="test">
+                  <Label fx:id="priceID" layoutX="14.0" layoutY="14.0" text="Coming Soon">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Label>
                </children></Pane>
-            <Pane fx:id="flightID1" layoutX="39.0" layoutY="303.0" prefHeight="112.0" prefWidth="851.0" style="-fx-background-color: #ffffff;" />
-            <Pane fx:id="flightID2" layoutX="42.0" layoutY="435.0" prefHeight="112.0" prefWidth="851.0" style="-fx-background-color: #ffffff;" />
+            <Pane fx:id="flightID1" layoutX="39.0" layoutY="303.0" prefHeight="112.0" prefWidth="851.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Text layoutX="19.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coming Soon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <Pane fx:id="flightID2" layoutX="42.0" layoutY="435.0" prefHeight="112.0" prefWidth="851.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Text layoutX="18.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coming Soon">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
          </children>
       </Pane>
       
